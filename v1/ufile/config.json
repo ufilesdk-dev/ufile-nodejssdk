@@ -1,0 +1,5 @@
+{
+    "ucloud_public_key" : "paste your public key here",
+    "ucloud_private_key" : "paste your private key here",
+    "proxy_suffix" : ".cn-bj.ufileos.com"
+}
