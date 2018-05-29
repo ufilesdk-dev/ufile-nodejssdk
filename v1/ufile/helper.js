@@ -10,21 +10,21 @@ exports.GetFileSize = function(file_path) {
 }
 
 exports.GetMimeType = function(file_path) {
-	var ret =  mime.lookup(file_path);
+	var ret =  mime.getType(file_path);
     if (!ret) {
         return "application/octet-stream";
-    }   
+    }
     return ret;
 }
 
 exports.KeySort = function(params) {
     var keys = _.keys(params);
-    var params_sort = {}; 
+    var params_sort = {};
     keys.sort();
         _.each(keys, function(key){
-        params_sort[key] = params[key];   
-    }); 
-    return params_sort;  
+        params_sort[key] = params[key];
+    });
+    return params_sort;
 }
 
 
@@ -42,13 +42,13 @@ SmallSha1 = function(path, callback) {
 
     var rs = fs.createReadStream(path);
     rs.on('data', function(chunk) {
-        sha1.update(chunk);	
+        sha1.update(chunk);
     });
 
     rs.on('end', function() {
         callback(1, sha1.digest());
     });
-} 
+}
 
 ChunkSha1 = function(path, callback) {
     var block_size = 4*1024*1024;
@@ -60,7 +60,7 @@ ChunkSha1 = function(path, callback) {
     var rs = fs.createReadStream(path);
     rs.on('data', function(chunk) {
         block += chunk.length;
-        sha1.update(chunk);	
+        sha1.update(chunk);
         if (block == block_size) {
             g_sha1.update(sha1.digest());
             sha1 = crypto.createHash('sha1');
@@ -76,7 +76,7 @@ ChunkSha1 = function(path, callback) {
         }
         callback(count, g_sha1.digest());
     });
-} 
+}
 
 exports.UFileEtag = function(path, file_size, callback) {
     assert(file_size >= 0);
