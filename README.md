@@ -3,9 +3,9 @@
 Node.js SDK for UCloud US3 (原名UFile 对象存储服务)
 
 ## 目录说明
-./ufile     -- US3的Node.js SDK，其依赖的模块可以查看./ufile/package.json
-./sdk_test  -- Node.js SDK的测试脚本
-./raw_test  -- 不依赖于Node.js SDK的测试脚本，适合阅读人群：需要探究细节，采用原生HTTP请求
+./ufile     -- US3的Node.js SDK，其依赖的模块可以查看./ufile/package.json    
+./sdk_test  -- Node.js SDK的测试脚本    
+./raw_test  -- 不依赖于Node.js SDK的测试脚本，适合阅读人群：需要探究细节，采用原生HTTP请求     
 
 
 ## US3的Node.js SDK使用方式
