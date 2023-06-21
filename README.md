@@ -1,5 +1,7 @@
 # UCloud US3 Node.js SDK
 
+[![Software License](https://img.shields.io/github/license/saltstack/salt)](LICENSE)
+
 Node.js SDK for UCloud US3 (原名UFile 对象存储服务)
 
 ## 目录说明
